@@ -1,25 +1,31 @@
 .wp-block-template-part {
 	&:is(header) {
+		position: sticky;
+    top: var(--wp-admin--admin-bar--height, 0px);
 		margin: 0;
+
 	}
 	&.navigation-modal {
 		--nav--icon--color: #fff;
 		--nav--height: calc(100dvh - var(--wp-admin--admin-bar--height, 0));
-		position: fixed;
-		top: var(--wp-admin--admin-bar--height, 0);
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 9999;
-		transform: translate(0, -100%);
-		display: none;
-		height: var(--nav--height);
+		&:not(.block-editor-block-list__block) {
+			position: fixed;
+			top: var(--wp-admin--admin-bar--height, 0);
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 9999;
+			display: none;
+			height: var(--nav--height);
+			clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+		}
 		.nav-open & {
-			transform: translate(0, 0);
+			// transform: translate(0, 0);
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 		}
 		.is-loaded & {
 			display: block;
-			transition: transform 0.3s;
+			transition: clip-path 0.3s;
 		}
 		& > .wp-block-group > .wp-block-group {
 			min-height: var(--nav--height);
