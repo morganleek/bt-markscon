@@ -4,27 +4,27 @@
 		"color": {
 			"palette": [
 				{
-					"color": "#bae7e0",
-					"name": "Aqua",
-					"slug": "custom-aqua"
+					"color": "#000000",
+					"name": "Black",
+					"slug": "black"
 				},
 				{
-					"color": "#2e5ca5",
-					"name": "Blue",
-					"slug": "custom-blue"
+					"color": "#ffffff",
+					"name": "White",
+					"slug": "white"
 				},
 				{
-					"color": "#f5f5ef",
+					"color": "#d2d2d2",
 					"name": "Grey",
 					"slug": "custom-grey"
 				},
 				{
-					"color": "#e8e6e0",
-					"name": "Taupe",
-					"slug": "custom-taupe"
+					"color": "#ff0000",
+					"name": "Red",
+					"slug": "custom-red"
 				},
 				{
-					"color": "#63666b",
+					"color": "#212427",
 					"name": "Charcoal",
 					"slug": "custom-charcoal"
 				}
