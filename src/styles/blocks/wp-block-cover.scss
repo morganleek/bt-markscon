@@ -1,2 +1,16 @@
-// .wp-block-cover {
-// }
+.wp-block-cover {
+	&.is-style-clip-bg-right {
+		.wp-block-cover__image-background {
+			clip-path: polygon(65% 0,83% 65%,73% 100%,0 100%,0 0);
+		}
+	}
+	.wp-block-cover__inner-container {
+		&:has(> .is-vertical.is-content-justification-stretch) {
+			display: flex;
+			min-height: 100dvh;
+			& > .is-vertical.is-content-justification-stretch {
+				width: 100%;
+			}
+		}
+	}
+}
