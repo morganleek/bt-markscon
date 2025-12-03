@@ -1,5 +1,11 @@
 .wp-block-buttons {
 	.wp-block-button {
+		&[class*="has-icon__"] {
+			.wp-block-button__link {
+				gap: 1.6rem;
+				padding-right: 14px;
+			}
+		}
 		.wp-block-button__link {
 		}
 		&.is-style-outline {

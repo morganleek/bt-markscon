@@ -131,11 +131,14 @@
 			'label' => 'Clip ◣'
 		] );
 
-		//  
-
 		register_block_style( 'core/cover', [
 			'name' => 'clip-bg-right',
 			'label' => 'Clip ◥'
+		] );
+
+		register_block_style( 'core/gallery', [
+			'name' => 'slider-gallery',
+			'label' => 'Slider'
 		] );
 	}
 

@@ -1,4 +1,7 @@
 .wp-block-cover {
+	&[style*="100vh"] {
+		min-height: calc(100dvh - var(--wp-admin--admin-bar--height, 0px)) !important;
+	}
 	&.is-style-clip-bg-right {
 		.wp-block-cover__image-background {
 			clip-path: polygon(65% 0,83% 65%,73% 100%,0 100%,0 0);
@@ -7,7 +10,7 @@
 	.wp-block-cover__inner-container {
 		&:has(> .is-vertical.is-content-justification-stretch) {
 			display: flex;
-			min-height: 100dvh;
+			min-height: calc(100dvh - var(--wp-admin--admin-bar--height, 0px));
 			& > .is-vertical.is-content-justification-stretch {
 				width: 100%;
 			}

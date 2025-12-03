@@ -1,2 +1,49 @@
-// .wp-block-gallery {
-// }
+.wp-block-gallery {
+	&.is-style-slider-gallery {
+		display: block;
+		// @media (min-width: 600px) {
+			&.has-nested-images.columns-default {
+				figure.wp-block-image:not(#individual-image) {
+					width: auto;
+					height: 340px;
+					display: inline-block;
+					max-width: none !important;
+					img {
+						width: auto;
+						height: 340px;
+						display: block;
+						max-width: none !important;
+					}
+				}
+			}
+		// }
+	}	
+}
+
+.wp-block-group.alignfull {
+	&:has(> .tns-outer) {
+		overflow: hidden;
+		.tns-outer,
+		.tns-ovh {
+			overflow: visible;
+		}
+	}
+}
+.tns-outer > button {
+	display: none;
+}
+.tns-nav {
+	display: flex;
+	margin: 2rem 0;
+	& > * {
+		flex: 1 1;
+		border: 0 none;
+		background: var(--wp--preset--color--custom-red);
+		height: 1px;
+		&.tns-nav-active {
+			& ~ * {
+				background: #d2d2d2;
+			}
+		}
+	}
+}

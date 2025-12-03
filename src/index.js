@@ -2,7 +2,7 @@ import 'vite/modulepreload-polyfill';
 import './style.scss';
 
 // Slider - Library import example
-// import { tns } from "tiny-slider"
+import { tns } from "tiny-slider"
 
 document.addEventListener('DOMContentLoaded', () => {
 	// Prevent nav animations running when page first loaded
@@ -30,6 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		link.addEventListener( "click", e => {
 			e.preventDefault();
 			document.body.classList.toggle( "nav-open" );
+		} );
+	} );
+
+	// Slider gallery
+	document.querySelectorAll( ".wp-block-gallery.is-style-slider-gallery" ).forEach( gallery => {
+		tns( {
+			container: gallery,
+			autoWidth: true,
+			loop: false,
+			autoplay: true,
+			gutter: 12,
+			controls: false,
+			navPosition: "bottom",
+			autoplayButton: false
 		} );
 	} );
 });

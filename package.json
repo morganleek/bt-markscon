@@ -11,6 +11,7 @@
     "vite-plugin-browser-sync": "4.0.0"
   },
   "dependencies": {
+    "tiny-slider": "^2.9.4"
   },
   "scripts": {
     "build": "vite build",
