@@ -121,6 +121,18 @@
 			'label' => 'Clip ◤'
 		] );
 
+		register_block_style( 'core/group', [
+			'name' => 'clip-bg-bottom-right',
+			'label' => 'Clip ◢'
+		] );
+
+		register_block_style( 'core/group', [
+			'name' => 'clip-bg-bottom-left',
+			'label' => 'Clip ◣'
+		] );
+
+		//  
+
 		register_block_style( 'core/cover', [
 			'name' => 'clip-bg-right',
 			'label' => 'Clip ◥'
@@ -154,3 +166,30 @@
 		return $icons;
 	}
 	add_filter( 'enable_button_icons_icons_update', 'add_an_icon' ,  20, 1 );
+
+function bones_theme_live_query_formatted( $post_id ) {
+	// featured image 
+	$post_thumbnail = ( has_post_thumbnail( $post_id ) ) ? "<div class=\"post-image\">" . 
+		"<div class=\"post-excerpt\"><span>" . get_the_excerpt( $post_id ) . "</span></div>" . 
+		"<a href=\"" . get_permalink( $post_id ) . "\">" . 
+			get_the_post_thumbnail( $post_id, 'full' ) . 
+		"</a>" . 
+	"</div>" : "";
+
+	$terms_html = "";
+	if( $terms = get_the_terms( $post_id, 'project-category' ) ) {
+		$terms_html = implode( ", ", array_map( function( $t ) {
+			return $t->name;
+		}, $terms ) );
+	}
+
+	return $post_thumbnail . "<div class=\"post-content\">" . 
+		"<h6 class=\"taxonomy-terms terms-project-category\">$terms_html</h6>" .
+		"<div class=\"post-excerpt\">" . get_the_excerpt( $post_id ) . "</div>" . 
+		"<h5 class=\"post-title\">" . 
+			"<a href=\"" . get_permalink( $post_id ) . "\">" . get_the_title($post_id) . "</a>" . 
+		"</h5>" . 
+	"</div>";
+}
+
+add_filter( "live_query_formatted", "bones_theme_live_query_formatted", 20, 1 );

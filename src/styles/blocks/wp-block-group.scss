@@ -5,4 +5,10 @@
 	&.is-style-clip-bg-top-left {
 		clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
 	}
+	&.is-style-clip-bg-bottom-right {
+		clip-path: polygon(0 0, 100% 0, 76% 100%, 0% 100%);
+	}
+	&.is-style-clip-bg-bottom-left {
+		clip-path: polygon(0% 0, 100% 0, 100% 100%, 30% 100%);
+	}
 }

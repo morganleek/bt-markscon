@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" width="32" height="32">
+  <style>
+		#nav rect {
+			fill: var(--nav--icon--color, #ff0000);
+			transition: all 0.3s;
+			transform-origin: center center;
+		}
+		.nav-open #nav .middle-first {
+			transform: rotate(45deg);
+		}
+		.nav-open #nav .middle-second {
+			transform: rotate(-45deg);
+		}
+		.nav-open #nav .top {
+			opacity: 0;
+		}
+		.nav-open #nav .bottom {
+			opacity: 0;
+		}
+	</style>
+  <g id="nav">
+    <rect class="top" y="10.626831" width="32" height=".75"></rect>
+    <rect class="middle-first" y="15.625122" width="32" height=".75"></rect>
+    <rect class="middle-second" y="15.625122" width="32" height=".75"></rect>
+    <rect class="bottom" y="20.623169" width="32" height=".75"></rect>
+  </g>
+</svg>

@@ -1,6 +1,12 @@
-// .wp-block-quote {
-// 	p {
-// 	}
-// 	cite {
-// 	}
-// }
+.wp-block-quote {
+	p {
+		font-family: var(--wp--preset--font-family--graphik-compact);
+		font-size: var(--wp--custom--heading-3--typography--font-size);
+		line-height: 1em;
+		font-weight: 700;
+	}
+	cite {
+		font-weight: 600;
+		text-align: right;
+	}
+}
