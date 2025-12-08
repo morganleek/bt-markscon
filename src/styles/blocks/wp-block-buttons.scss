@@ -53,5 +53,18 @@
 				}
 			}
 		}
+		&.is-style-minimal {
+			.wp-block-button__link {
+				background: transparent;
+				border: 0 none;
+				padding: 0;
+				text-transform: none;
+				font-family: var(--wp--preset--font-family--basel-grotesk);
+				font-weight: 200;
+				gap: 10px;
+				text-decoration: underline;
+				text-underline-offset: 2px;
+			}
+		}
 	}
 }

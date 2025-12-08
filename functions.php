@@ -140,6 +140,11 @@
 			'name' => 'slider-gallery',
 			'label' => 'Slider'
 		] );
+
+		register_block_style( 'core/button', [
+			'name' => 'minimal',
+			'label' => 'Minimal'
+		] );
 	}
 
 	// Add am icon

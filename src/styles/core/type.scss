@@ -27,6 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 	--wp--custom--heading-2--large--typography--font-size: 4.375rem;
 	--wp--custom--heading-2--small--typography--font-size: 3rem;
 	--wp--custom--heading-3--small--typography--font-size: 2.25rem;
+	--wp--custom--heading-4--large--typography--font-size: 2rem;
 	--wp--custom--heading-5--large--typography--font-size: 1.47375rem;
 	--wp--custom--heading-6--small--typography--font-size: 1.18875rem;
 }
@@ -58,11 +59,13 @@ h3 {
 	}
 }
 
-// h4 {
-// 	&.has-x-large-font-size {}
-// 	&.has-large-font-size {}
-// 	&.has-small-font-size {}
-// }
+h4 {
+	// &.has-x-large-font-size {}
+	&.has-large-font-size {
+		--wp--preset--font-size--large: var(--wp--custom--heading-4--large--typography--font-size);
+	}
+	// &.has-small-font-size {}
+}
 
 h5 {
 	// &.has-x-large-font-size {}
