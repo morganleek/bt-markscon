@@ -1,2 +1,12 @@
-// .wp-block-query {	
-// }
+.wp-block-query {	
+	.wp-block-post-terms {
+		font-family: var(--wp--preset--font-family--graphik);
+		font-size: 0.88rem;
+		font-style: normal;
+		font-weight: 800;
+		a {
+			text-decoration: none;
+			pointer-events: none;
+		}
+	}
+}

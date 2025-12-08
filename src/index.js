@@ -46,4 +46,24 @@ document.addEventListener('DOMContentLoaded', () => {
 			autoplayButton: false
 		} );
 	} );
+
+	// Anchor links
+	document.querySelectorAll( "a[href*='#']" ).forEach( link => {
+		link.addEventListener( "click", e => {
+			const anchorRegex = /#(.*)$/;
+			const id = e.target.href.match( anchorRegex );
+			if( id.length > 0 && document.querySelector( id[0] ) ) {
+				e.preventDefault();
+				document.querySelector( id[0] ).scrollIntoView( { behavior: "smooth" } );
+				document.body.classList.toggle( "nav-open", false );
+			}
+		} );
+	} );
+
+	// Esc close nav
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') {
+			document.body.classList.toggle( "nav-open", false );
+		}
+	});
 });

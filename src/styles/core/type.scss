@@ -1,30 +1,99 @@
 h1, h2, h3, h4, h5, h6 {
-	
+	strong {
+		font-weight: 800;
+	}
 }
 
 .has-x-large-font-size {
-	line-height: var(--wp--custom--line-height--x-large);
+	line-height: var(--wp--custom--x-large--typography--line-height, 1.2em);
 }
 .has-large-font-size {
-	line-height: var(--wp--custom--line-height--large);
+	line-height: var(--wp--custom--large--typography--line-height, 1.2em);
 }
 .has-small-font-size {
-	line-height: var(--wp--custom--line-height--small);
+	line-height: var(--wp--custom--small--typography--line-height, 1.2em);
 }
 
 @for $i from 1 through 6 {
 	h#{$i} {
-		&.has-x-large-font-size {
-			font-size: calc(var(--wp--custom--font-size--heading-#{$i}) * 1.3) !important;
-		}
-		&.has-large-font-size {
-			font-size: calc(var(--wp--custom--font-size--heading-#{$i}) * 1.15) !important;
-		}
 		&.has-medium-font-size {
-			font-size: var(--wp--custom--font-size--heading-#{$i}) !important;
+			font-size: var(--wp--custom--heading-#{$i}--typography--font-size) !important;
 		}
-		&.has-small-font-size {
-			font-size: calc(var(--wp--custom--font-size--heading-#{$i}) * 0.85) !important;
-		}	
 	}
 }
+
+:root {
+	--wp--custom--heading-1--large--typography--font-size: 7.25rem;
+	--wp--custom--heading-2--large--typography--font-size: 4.375rem;
+	--wp--custom--heading-2--small--typography--font-size: 3rem;
+	--wp--custom--heading-3--small--typography--font-size: 2.25rem;
+	--wp--custom--heading-5--large--typography--font-size: 1.47375rem;
+	--wp--custom--heading-6--small--typography--font-size: 1.18875rem;
+}
+
+h1 {
+	// &.has-x-large-font-size {}
+	&.has-large-font-size {
+		--wp--preset--font-size--large: var(--wp--custom--heading-1--large--typography--font-size);
+	}
+	// &.has-small-font-size {}
+}
+
+h2 {
+	// &.has-x-large-font-size {}
+	&.has-large-font-size {
+		--wp--preset--font-size--large: var(--wp--custom--heading-2--large--typography--font-size);
+	}
+	&.has-small-font-size {
+		--wp--preset--font-size--small: var(--wp--custom--heading-2--small--typography--font-size);
+		--wp--custom--small--typography--line-height: 1.08em;
+	}
+}
+
+h3 {
+	// &.has-x-large-font-size {}
+	// &.has-large-font-size {}
+	&.has-small-font-size {
+		--wp--preset--font-size--small: var(--wp--custom--heading-3--small--typography--font-size);
+	}
+}
+
+// h4 {
+// 	&.has-x-large-font-size {}
+// 	&.has-large-font-size {}
+// 	&.has-small-font-size {}
+// }
+
+h5 {
+	// &.has-x-large-font-size {}
+	&.has-large-font-size {
+		--wp--preset--font-size--large: var(--wp--custom--heading-5--large--typography--font-size);
+	}
+	// &.has-small-font-size {}
+}
+
+h6 {
+	// &.has-x-large-font-size {}
+	// 	&.has-large-font-size {}
+	&.has-small-font-size {
+		--wp--preset--font-size--small: var(--wp--custom--heading-6--small--typography--font-size);
+	}
+}
+
+
+
+
+
+
+
+// h3 {
+// 	&.has-large-font-size {
+// 		font-size: calc(var(--wp--custom--heading-3--typography--font-size) * 1.325) !important;
+// 		line-height: 0.9em;
+// 	}
+// }
+// h4 {
+// 	&.has-small-font-size {
+// 		font-size: calc(var(--wp--custom--heading-4--typography--font-size) * 0.9) !important;
+// 	}
+// }

@@ -45,39 +45,37 @@
 		"custom": {
 			"heading-1": {
 				"typography": {
-					"fontSize": "7.25rem",
+					"fontSize": "5.25rem",
 					"lineHeight": "1.2"
 				}
 			},
 			"heading-2": {
 				"typography": {
-					"fontSize": "5.25rem",
+					"fontSize": "3.875rem",
 					"lineHeight": "1.2"
 				}
 			},
 			"heading-3": {
 				"typography": {
-					"fontSize": "3rem",
+					"fontSize": "2.5rem",
 					"lineHeight": "1.2"
 				}
 			},
 			"heading-4": {
 				"typography": {
-					"fontSize": "2.5rem",
+					"fontSize": "1.75rem",
 					"lineHeight": "1.2"
 				}
 			},
 			"heading-5": {
 				"typography": {
-					"fontSize": "1.75rem",
+					"fontSize": "1.375rem",
 					"lineHeight": "1.2"
 				}
 			},
 			"heading-6": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--basel-grotesk)",
-					"fontSize": "1.4375rem",
-					"fontWeight": "400",
+					"fontSize": "1.125rem",
 					"lineHeight": "1.2"
 				}
 			},
@@ -101,6 +99,11 @@
 					"name": "5:4",
 					"ratio": "5/4",
 					"slug": "five-four-wide"
+				},
+				{
+					"name": "2:1",
+					"ratio": "2/1",
+					"slug": "two-one-wide"
 				}
 			],
 			"defaultAspectRatios": true
@@ -233,7 +236,7 @@
 							"fontStretch": "100%",
 							"fontStyle": "normal",
 							"fontWeight": "600",
-							"src": "file:./assets/fonts/GraphikCondensed-Semibold-Trail.otf"
+							"src": "file:./assets/fonts/GraphikCondensed-Semibold-Trial.otf"
 						}
 					],
 					"fontFamily": "\"Graphik Condensed\", sans-serif",
@@ -397,7 +400,7 @@
 					"fontSize": "var(--wp--custom--heading-3--typography--font-size)",
 					"fontStyle": "normal",
 					"fontWeight": "700",
-					"lineHeight": "1"
+					"lineHeight": "1.2"
 				}
 			},
 			"h4": {
@@ -423,9 +426,7 @@
 					"fontFamily": "var(--wp--preset--font-family--graphik)",
 					"fontSize": "var(--wp--custom--heading-6--typography--font-size)",
 					"fontStyle": "normal",
-					"fontWeight": "700",
-					"letterSpacing": "0",
-					"lineHeight": "1"
+					"fontWeight": "700"
 				}
 			},
 			"heading": {

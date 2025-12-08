@@ -1,4 +1,12 @@
 .wp-block-quote {
+	& > * {
+		&:first-child {
+			text-indent: 1.5em;
+		}
+	}
+	h2.has-small-font-size {
+		font-size: 2.871875rem;
+	}
 	p {
 		font-family: var(--wp--preset--font-family--graphik-compact);
 		font-size: var(--wp--custom--heading-3--typography--font-size);
@@ -6,7 +14,11 @@
 		font-weight: 700;
 	}
 	cite {
-		font-weight: 600;
+		font-weight: 500;
 		text-align: right;
+		font-style: normal;
+		@media (min-width: 992px) { 
+			padding-right: 50px;
+		}
 	}
 }

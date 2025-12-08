@@ -170,7 +170,7 @@
 	}
 	add_filter( 'enable_button_icons_icons_update', 'add_an_icon' ,  20, 1 );
 
-function bones_theme_live_query_formatted( $post_id ) {
+function bones_theme_live_query_formatted( $html, $post_id ) {
 	// featured image 
 	$post_thumbnail = ( has_post_thumbnail( $post_id ) ) ? "<div class=\"post-image\">" . 
 		"<div class=\"post-excerpt\"><span>" . get_the_excerpt( $post_id ) . "</span></div>" . 
@@ -189,10 +189,10 @@ function bones_theme_live_query_formatted( $post_id ) {
 	return $post_thumbnail . "<div class=\"post-content\">" . 
 		"<h6 class=\"taxonomy-terms terms-project-category\">$terms_html</h6>" .
 		"<div class=\"post-excerpt\">" . get_the_excerpt( $post_id ) . "</div>" . 
-		"<h5 class=\"post-title\">" . 
+		"<h4 class=\"post-title\">" . 
 			"<a href=\"" . get_permalink( $post_id ) . "\">" . get_the_title($post_id) . "</a>" . 
-		"</h5>" . 
+		"</h4>" . 
 	"</div>";
 }
 
-add_filter( "live_query_formatted", "bones_theme_live_query_formatted", 20, 1 );
+add_filter( "live_query_formatted", "bones_theme_live_query_formatted", 20, 2 );

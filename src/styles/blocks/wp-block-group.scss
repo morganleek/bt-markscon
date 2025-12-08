@@ -1,13 +1,13 @@
 .wp-block-group {
 	&.is-style-clip-bg-top-right {
 		clip-path: polygon(0 0, 76% 0, 100% 100%, 0% 100%);
-		.single-project & {
+		.single-project main & {
 			clip-path: polygon(0 0, 100% 18%, 100% 100%, 0% 100%);
 		}
 	}
 	&.is-style-clip-bg-top-left {
 		clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
-		.single-project & {
+		.single-project main & {
 			clip-path: polygon(0 18%, 100% 0%, 100% 100%, 0% 100%);
 		}
 	}
@@ -16,5 +16,40 @@
 	}
 	&.is-style-clip-bg-bottom-left {
 		clip-path: polygon(0% 0, 100% 0, 100% 100%, 30% 100%);
+	}
+	&.center-line {
+		position: relative;
+		& > * {
+			position: relative;
+			z-index: 10;
+		}
+		&::before {
+			content: "";
+			width: 10px;
+			height: 100%;
+			position: absolute;
+			left: 50%;
+			top: 0;
+			transform: translate(-50%, 0);
+			background: var(--wp--preset--color--custom-red);
+		}
+	}
+	&.is-style-clip-bg-top-right,
+	&.is-style-clip-bg-top-left,
+	&.is-style-clip-bg-bottom-right,
+	&.is-style-clip-bg-bottom-left {
+		&:has(>.negative-margin) {
+			img {
+				margin-left: -22px !important;
+				margin-right: -22px !important;
+				max-width: calc(100% + 44px);
+			}
+		}
+	}
+	&.related-projects {
+		h4.post-title {
+			font-size: var(--wp--custom--heading-5--large--typography--font-size);
+			margin-top: 0;
+		}
 	}
 }

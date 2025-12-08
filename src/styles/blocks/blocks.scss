@@ -25,3 +25,9 @@
 @use "wp-block-verse";
 @use "wp-block-video";
 @use "wp-site-blocks";
+
+.wp-block {
+	&.is-reusable {
+		margin-top: 0;
+	}
+}

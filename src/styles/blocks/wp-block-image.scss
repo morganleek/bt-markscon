@@ -1,4 +1,4 @@
-// .wp-block-image {
+.wp-block-image {
 // 	&:not(.alignfull) {
 // 		width: calc(var(--max--container-width) - 2*var(--wp--custom--spacing--outer));
 // 	}
@@ -6,4 +6,28 @@
 // 	}
 // 	figcaption {
 // 	}
-// }
+	&.center-line,
+	&.center-line-inv {
+		position: relative;
+		// & > * {
+		// 	position: relative;
+		// 	z-index: 10;
+		// }
+		&::before {
+			content: "";
+			width: 10px;
+			height: 100%;
+			position: absolute;
+			left: 50%;
+			top: 0;
+			transform: translate(-50%, 0);
+			background: var(--wp--preset--color--custom-red);
+			z-index: 1;
+		}
+	}
+	&.center-line-inv {
+		&::before {
+			background: #fff;
+		}
+	}
+}

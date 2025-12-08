@@ -39,7 +39,7 @@
 				.wp-block-navigation-item {
 					& > a {
 						@media( hover: hover ) {
-							transition: all 0.2s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+							transition: all 0.2s; // cubic-bezier(0.6, -0.28, 0.74, 0.05);
 							&:hover {
 								transform: translate(20px, 0);
 							}
