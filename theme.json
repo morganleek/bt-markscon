@@ -7,6 +7,11 @@
 					"gradient": "linear-gradient(180deg,rgba(33, 36, 39, 1) 0%, rgba(33, 36, 39, 1) 50%, rgba(255, 0, 0, 1) 50%, rgba(255, 0, 0, 1) 100%)",
 					"name": "Black to Red",
 					"slug": "black-to-red"
+				},
+				{
+					"gradient": "linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 0, 0, 1) 50%, rgba(255, 0, 0, 1) 100%)",
+					"name": "White to Red",
+					"slug": "white-to-red"
 				}
 			],
 			"palette": [
