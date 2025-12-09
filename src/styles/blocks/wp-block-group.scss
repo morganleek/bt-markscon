@@ -52,4 +52,15 @@
 			margin-top: 0;
 		}
 	}
+	&.results-stats {
+		& > .wp-block-group {
+			& > .wp-block-group {
+				& > * {
+					@media (width < 600px) { 
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
 }

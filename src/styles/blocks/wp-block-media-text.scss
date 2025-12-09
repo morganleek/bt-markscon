@@ -1,35 +1,60 @@
 .wp-block-media-text {
-	@media (min-width: 600px) {
-		grid-template-columns: 33% auto;
-		justify-content: end;
+	// @media (min-width: 600px) {
+	grid-template-columns: 20px auto !important;
+	grid-template-rows: auto !important;
+	justify-content: end;
+	@media (min-width: 601px) {
+		grid-template-columns: 33% auto !important;
+	}
+	// @media (max-width: 600px) {
+	// 	& > .wp-block-media-text__media {
+	// 		grid-column: 1 / 3;
+	// 	}
+	// }
+	@media (width < 782px) {
+		grid-template-columns: 20px auto !important;
 		& > .wp-block-media-text__media {
-			margin-left: -22px;
-			margin-right: -22px;
-			grid-column: 1 / 3;
-			padding-bottom: min(9.666vw, 116px);
-		} 
-		& > .wp-block-media-text__content {
-			margin-left: -22px;
-			margin-right: -22px;
-			background: var(--wp--preset--color--custom-red);
-			color: #fff;
-			padding-left: min(16vw, 200px);
-			padding-right: min(6vw, 72px);
-			padding-top: 4.5rem;
-			align-self: end;
-			clip-path: polygon(10% 21%, 100% 0, 100% 100%, 0% 100%);
-		}
-		&.has-media-on-the-right {
-			grid-template-columns: auto 33%;
-			& > .wp-block-media-text__media {
-				grid-column: 1 / 3;
-				padding-bottom: min(8.333vw, 100px);
-			} 
-			& > .wp-block-media-text__content {
-				clip-path: polygon(0 0, 92% 15%, 100% 100%, 0% 100%);
-				padding-left: min(6vw, 72px);
-				padding-right: min(16vw, 200px);
+			img {
+				min-height: 100vw;
+				object-fit: cover;
 			}
 		}
 	}
+	@media (width < 600px) {
+		& > .wp-block-media-text__media {
+			img {
+				min-height: 150vw;
+			}
+		}
+	}
+	& > .wp-block-media-text__media {
+		margin-left: -22px;
+		margin-right: -22px;
+		grid-column: 1 / 3;
+		padding-bottom: min(9.666vw, 116px);
+	} 
+	& > .wp-block-media-text__content {
+		margin-left: -22px;
+		margin-right: -22px;
+		background: var(--wp--preset--color--custom-red);
+		color: #fff;
+		padding-left: min(16vw, 200px);
+		padding-right: min(6vw, 72px);
+		padding-top: 4.5rem;
+		align-self: end;
+		clip-path: polygon(10% 21%, 100% 0, 100% 100%, 0% 100%);
+	}
+	&.has-media-on-the-right {
+		grid-template-columns: auto 33%;
+		& > .wp-block-media-text__media {
+			grid-column: 1 / 3;
+			padding-bottom: min(8.333vw, 100px);
+		} 
+		& > .wp-block-media-text__content {
+			clip-path: polygon(0 0, 92% 15%, 100% 100%, 0% 100%);
+			padding-left: min(6vw, 72px);
+			padding-right: min(16vw, 200px);
+		}
+	}
+	// }
 }

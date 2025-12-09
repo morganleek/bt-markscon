@@ -201,3 +201,28 @@ function bones_theme_live_query_formatted( $html, $post_id ) {
 }
 
 add_filter( "live_query_formatted", "bones_theme_live_query_formatted", 20, 2 );
+
+function bones_theme_live_query_people_formatted( $html, $post_id ) {
+	// featured image 
+	$post_thumbnail = ( has_post_thumbnail( $post_id ) ) ? "<div class=\"post-image\">" . 
+		"<a href=\"" . get_permalink( $post_id ) . "\">" . 
+			get_the_post_thumbnail( $post_id, 'full' ) . 
+		"</a>" . 
+	"</div>" : "";
+
+	$terms_html = "";
+	if( $terms = get_the_terms( $post_id, 'role' ) ) {
+		$terms_html = implode( ", ", array_map( function( $t ) {
+			return $t->name;
+		}, $terms ) );
+	}
+
+	return $post_thumbnail . "<div class=\"post-content\">" . 
+		"<h6 class=\"post-title\">" . 
+			"<a href=\"" . get_permalink( $post_id ) . "\">" . get_the_title($post_id) . "</a>" . 
+		"</h6>" . 
+		"<h6 class=\"taxonomy-terms terms-role\">$terms_html</h6>" .
+	"</div>";
+}
+
+add_filter( "live_query_people_formatted", "bones_theme_live_query_people_formatted", 20, 2 );

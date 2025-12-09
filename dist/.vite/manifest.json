@@ -1,15 +1,15 @@
 {
   "src/index.js": {
-    "file": "assets/main-OLABN_sM.js",
+    "file": "assets/main-Cocm0c4R.js",
     "name": "main",
     "src": "src/index.js",
     "isEntry": true,
     "css": [
-      "assets/style_only-B56UllOT.css"
+      "assets/style_only-BQ_8bVcf.css"
     ]
   },
   "src/style.scss": {
-    "file": "assets/style_only-B56UllOT.css",
+    "file": "assets/style_only-BQ_8bVcf.css",
     "src": "src/style.scss",
     "isEntry": true
   }

@@ -26,13 +26,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 :root {
+	--wp--custom--heading-1--small--typography--font-size: 4.875rem;
 	--wp--custom--heading-1--large--typography--font-size: 7.25rem;
+	--wp--custom--heading-2--small--typography--font-size: clamp(1.75rem, 0.1875rem + 5vw, 3rem);
 	--wp--custom--heading-2--large--typography--font-size: 4.375rem;
-	--wp--custom--heading-2--small--typography--font-size: 3rem;
 	--wp--custom--heading-3--small--typography--font-size: 2.25rem;
-	--wp--custom--heading-4--large--typography--font-size: 2rem;
-	--wp--custom--heading-5--large--typography--font-size: 1.47375rem;
-	--wp--custom--heading-6--small--typography--font-size: 1.18875rem;
+	--wp--custom--heading-3--large--typography--font-size: 2.75rem;
+	--wp--custom--heading-4--small--typography--font-size: 1.625rem;
+	--wp--custom--heading-4--large--typography--font-size: clamp(1.375rem, 0.5938rem + 2.5vw, 2rem);
+	--wp--custom--heading-5--small--typography--font-size: 1.18875rem;
+	--wp--custom--heading-5--large--typography--font-size: clamp(1.125rem, 0.6891rem + 1.395vw, 1.47375rem);
+	--wp--custom--heading-6--small--typography--font-size: 1.03125rem;
+	--wp--custom--heading-6--large--typography--font-size: 1.125rem;
 }
 
 h1 {
@@ -40,7 +45,9 @@ h1 {
 	&.has-large-font-size {
 		--wp--preset--font-size--large: var(--wp--custom--heading-1--large--typography--font-size);
 	}
-	// &.has-small-font-size {}
+	&.has-small-font-size {
+		--wp--preset--font-size--small: var(--wp--custom--heading-1--small--typography--font-size);
+	}
 }
 
 h2 {
@@ -56,7 +63,9 @@ h2 {
 
 h3 {
 	// &.has-x-large-font-size {}
-	// &.has-large-font-size {}
+	&.has-large-font-size {
+		--wp--preset--font-size--large: var(--wp--custom--heading-3--large--typography--font-size);
+	}
 	&.has-small-font-size {
 		--wp--preset--font-size--small: var(--wp--custom--heading-3--small--typography--font-size);
 	}
@@ -64,10 +73,12 @@ h3 {
 
 h4 {
 	// &.has-x-large-font-size {}
+	&.has-small-font-size {
+		--wp--preset--font-size--small: var(--wp--custom--heading-4--small--typography--font-size);
+	}
 	&.has-large-font-size {
 		--wp--preset--font-size--large: var(--wp--custom--heading-4--large--typography--font-size);
 	}
-	// &.has-small-font-size {}
 }
 
 h5 {
@@ -75,14 +86,18 @@ h5 {
 	&.has-large-font-size {
 		--wp--preset--font-size--large: var(--wp--custom--heading-5--large--typography--font-size);
 	}
-	// &.has-small-font-size {}
+	&.has-small-font-size {
+		--wp--preset--font-size--small: var(--wp--custom--heading-5--small--typography--font-size);
+	}
 }
 
 h6 {
 	// &.has-x-large-font-size {}
-	// 	&.has-large-font-size {}
 	&.has-small-font-size {
 		--wp--preset--font-size--small: var(--wp--custom--heading-6--small--typography--font-size);
+	}
+	&.has-large-font-size {
+		--wp--preset--font-size--large: var(--wp--custom--heading-6--large--typography--font-size);
 	}
 }
 

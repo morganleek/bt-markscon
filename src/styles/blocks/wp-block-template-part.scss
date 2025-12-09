@@ -52,9 +52,22 @@
 	&:is(footer) {
 		p {
 			line-height: 1.2em;
+			@media (width < 600px ) {
+				font-size: 0.928125rem;
+			}
 		}
 		nav a {
 			line-height: 1.2em;
+			@media (width < 600px ) {
+				font-size: 0.928125rem;
+			}
+		}
+		.footer-items-wrapper {
+			@media (width < 600px ) {
+				& > * { 
+					width: 100%;
+				}
+			}
 		}
 	}
 }
