@@ -9,44 +9,55 @@
 		.wp-block-button__link {
 		}
 		&.is-style-outline {
-			.wp-block-button__link {
-				position: relative;
-				overflow: hidden;
-				transition: color 0.2s;
-				&::before {
-					content: "";
-					width: 100%; 
-					height: 0;
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					background: var(--wp--preset--color--custom-red);
-					transition: all 0.2s;
-					z-index: -1;
-				}
-				@media (hover: hover) {
-					&:hover {
-						color: #fff !important;
-						border-color: var(--wp--preset--color--custom-red);
-						&::before {
-							height: 100%;
-						}
+			&:not(.block-editor-block-list__block) {
+				.wp-block-button__link {
+					position: relative;
+					overflow: hidden;
+					transition: color 0.2s;
+					&::before {
+						content: "";
+						width: 100%; 
+						height: 0;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						background: var(--wp--preset--color--custom-red);
+						transition: all 0.2s;
+						z-index: -1;
 					}
-					&.has-text-color {
-						&.has-custom-charcoal-color {
+					@media (hover: hover) {
+						&:hover {
+							color: #fff !important;
+							border-color: var(--wp--preset--color--custom-red);
 							&::before {
-								background-color: var(--wp--preset--color--custom-charcoal);
-							}
-							&:hover {
-								border-color: var(--wp--preset--color--custom-charcoal);
+								height: 100%;
 							}
 						}
-						&.has-custom-grey-color {
-							&::before {
-								background-color: var(--wp--preset--color--custom-grey);
+						&.has-text-color {
+							&.has-custom-charcoal-color {
+								&::before {
+									background-color: var(--wp--preset--color--custom-charcoal);
+								}
+								&:hover {
+									border-color: var(--wp--preset--color--custom-charcoal);
+								}
 							}
-							&:hover {
-								border-color: var(--wp--preset--color--custom-grey);
+							&.has-custom-grey-color {
+								&::before {
+									background-color: var(--wp--preset--color--custom-grey);
+								}
+								&:hover {
+									border-color: var(--wp--preset--color--custom-grey);
+								}
+							}
+							&.has-white-color {
+								&::before {
+									background-color: var(--wp--preset--color--white);
+								}
+								&:hover {
+									border-color: var(--wp--preset--color--white);
+									color: var(--wp--preset--color--custom-red) !important;
+								}
 							}
 						}
 					}
