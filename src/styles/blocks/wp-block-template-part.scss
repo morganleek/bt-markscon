@@ -5,6 +5,21 @@
 		margin: 0;
 		background: #fff;
 		z-index: 9999;
+		& > .wp-block-group {
+			& > .wp-block-group {
+				@media (width < 782px) {
+					// --wp--preset--spacing--30: 20px;
+					padding: 16px 20px !important;
+				}
+			}
+		}
+		.wp-block-image {
+			display: block;
+			a,
+			img {
+				display: block;
+			}
+		}
 	}
 	&.navigation-modal {
 		--nav--icon--color: #fff;
@@ -30,14 +45,33 @@
 		}
 		& > .wp-block-group > .wp-block-group {
 			min-height: var(--nav--height);
+			@media (width < 782px) {
+				justify-content: flex-start;
+				gap: 20vw;
+			}
+			& > .wp-block-group {
+					@media (width < 782px) {
+						// --wp--preset--spacing--30: 20px;
+						padding: 15px 20px 17px !important;
+					}
+			}
 		}
 		a {
 			text-decoration: none;
 		}
 		nav.wp-block-navigation {
+			font-family: var(--wp--preset--font-family--graphik) !important;
 			.wp-block-navigation__container {
+				width: 100%;
+				@media( width < 782px ) {
+					align-items: center;
+					gap: 2rem;
+				}
 				.wp-block-navigation-item {
-					& > a {
+					.wp-block-navigation-item__content {
+						font-size: clamp(3.028125rem, 1.032rem + 6.3875vw, 4.625rem);
+						line-height: 1em;
+						font-weight: 700;
 						@media( hover: hover ) {
 							transition: all 0.2s; // cubic-bezier(0.6, -0.28, 0.74, 0.05);
 							&:hover {
@@ -48,22 +82,36 @@
 				}
 			}
 		}
+		.wp-block-group:has(> .menu-expanded-footer) {
+			@media (width < 782px) {
+				margin-top: auto;
+				margin-bottom: 0;
+			}
+		}
+		.menu-expanded-footer {
+			@media (width < 782px ) { 
+				padding-bottom: 10px !important;
+				p {
+					font-size: 0.91375rem;
+				}
+			}
+		}
 	}
 	&:is(footer) {
 		p {
 			line-height: 1.2em;
-			@media (width < 600px ) {
+			@media (width < 782px ) {
 				font-size: 0.928125rem;
 			}
 		}
 		nav a {
 			line-height: 1.2em;
-			@media (width < 600px ) {
+			@media (width < 782px ) {
 				font-size: 0.928125rem;
 			}
 		}
 		.footer-items-wrapper {
-			@media (width < 600px ) {
+			@media (width < 782px ) {
 				& > * { 
 					width: 100%;
 				}
@@ -90,7 +138,7 @@
 // 		display: block !important;
 // 	}
 // }
-// @media ( min-width: 600px ) {
+// @media ( min-width: 782px ) {
 // 	.wp-block-navigation__responsive-container-open:not(.always-shown) {
 // 		display: flex;
 // 	}

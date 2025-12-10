@@ -80,7 +80,7 @@
 			},
 			"heading-6": {
 				"typography": {
-					"fontSize": "1.125rem",
+					"fontSize": "clamp(0.875rem, 0.5625rem + 1vw, 1.125rem)",
 					"lineHeight": "1.2"
 				}
 			},
@@ -127,12 +127,12 @@
 				},
 				{
 					"name": "2rem",
-					"size": "clamp(1.5rem, 0.875rem + 2vw, 2rem)",
+					"size": "2rem",
 					"slug": "30"
 				},
 				{
 					"name": "3rem",
-					"size": "clamp(1.95rem, 0.6375rem + 4.2vw, 3rem)",
+					"size": "clamp(2.3rem, 1.425rem + 2.8vw, 3rem)",
 					"slug": "40"
 				},
 				{
@@ -431,7 +431,8 @@
 					"fontFamily": "var(--wp--preset--font-family--graphik)",
 					"fontSize": "var(--wp--custom--heading-6--typography--font-size)",
 					"fontStyle": "normal",
-					"fontWeight": "700"
+					"fontWeight": "700",
+					"lineHeight": "var(--wp--custom--heading-5--typography--line-height, 1.2em)"
 				}
 			},
 			"heading": {
@@ -452,15 +453,15 @@
 			"blockGap": "1rem",
 			"padding": {
 				"bottom": "0px",
-				"left": "2rem",
-				"right": "2rem",
+				"left": "clamp(1.3rem, 0.425rem + 2.8vw, 2rem)",
+				"right": "clamp(1.3rem, 0.425rem + 2.8vw, 2rem)",
 				"top": "0px"
 			}
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--basel-grotesk)",
 			"fontSize": "var(--wp--preset--font-size--medium)",
-			"lineHeight": "1.07em",
+			"lineHeight": "1.2em",
 			"fontWeight": "500"
 		}
 	},

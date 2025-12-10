@@ -30,4 +30,21 @@
 			background: #fff;
 		}
 	}
+	&.markscon-logo {
+		img {
+			max-width: 35vw;
+		}
+	}
+	&.markscon-letter {
+		img {
+			max-width: 7vw;
+			aspect-ratio: 1;
+			height: auto !important;
+		}
+	}
+	&.navigation-trigger {
+		svg {
+			max-width: 6vw;
+		}
+	}
 }

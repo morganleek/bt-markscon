@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Slider gallery
 	document.querySelectorAll( ".wp-block-gallery.is-style-slider-gallery" ).forEach( gallery => {
-		tns( {
+		const slider = tns( {
 			container: gallery,
 			autoWidth: true,
 			loop: false,
@@ -44,6 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
 			controls: false,
 			navPosition: "bottom",
 			autoplayButton: false
+		} );
+
+		let info = slider.getInfo();
+		const counter = document.createElement( "div" );
+		counter.classList.add( "counter" );
+		counter.innerHTML = `${info.index + 1} / ${info.slideCount}`;
+
+		const ref = gallery.parentElement.appendChild( counter );
+
+		slider.events.on( 'transitionEnd', () => {
+			info = slider.getInfo();
+			ref.innerHTML = `${info.index + 1} / ${info.slideCount}`;
 		} );
 	} );
 
@@ -66,4 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			document.body.classList.toggle( "nav-open", false );
 		}
 	});
+
+	document.querySelectorAll( ".wp-block-buttons.expanded-read-more" ).forEach( button => {
+		button.addEventListener( "click", e => {
+			button.remove();
+		} );
+	} );
 });
