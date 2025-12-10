@@ -150,6 +150,11 @@
 			'name' => 'project',
 			'label' => 'Project'
 		] );
+
+		register_block_style( 'core/columns', [
+			'name' => 'stacked-reverse',
+			'label' => 'Stacked Reverse '
+		] );
 	}
 
 	// Add am icon

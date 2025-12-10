@@ -31,8 +31,10 @@
 		}
 	}
 	&.markscon-logo {
+		svg,
 		img {
 			max-width: 35vw;
+			height: auto !important;
 		}
 	}
 	&.markscon-letter {

@@ -5,6 +5,9 @@
 	&.is-style-clip-bg-right {
 		.wp-block-cover__image-background {
 			clip-path: polygon(65% 0,83% 65%,73% 100%,0 100%,0 0);
+			@media (width < 782px) {
+				clip-path: polygon(100% 80%, 58% 91%, 0 76%, 0 0, 100% 0);
+			}
 		}
 	}
 	.wp-block-cover__inner-container {

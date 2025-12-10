@@ -27,8 +27,8 @@ h1, h2, h3, h4, h5, h6 {
 
 :root {
 	--wp--custom--heading-1--small--typography--font-size: 4.875rem;
-	--wp--custom--heading-1--large--typography--font-size: 7.25rem;
-	--wp--custom--heading-2--small--typography--font-size: clamp(1.75rem, 0.1875rem + 5vw, 3rem);
+	--wp--custom--heading-1--large--typography--font-size: clamp(5.875rem, 5.3908rem + 1.5493vw, 7.25rem);
+	--wp--custom--heading-2--small--typography--font-size: clamp(2.125rem, 1.8169rem + 0.9859vw, 3rem); // clamp(1.75rem, 0.1875rem + 5vw, 3rem);
 	--wp--custom--heading-2--large--typography--font-size: 4.375rem;
 	--wp--custom--heading-3--small--typography--font-size: 2.25rem;
 	--wp--custom--heading-3--large--typography--font-size: 2.75rem;

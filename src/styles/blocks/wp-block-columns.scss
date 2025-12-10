@@ -6,4 +6,9 @@
 			}
 		}
 	}
+	&.is-style-stacked-reverse {
+		@media (max-width: 781px) {
+			flex-direction: column-reverse;
+		}
+	}
 }
