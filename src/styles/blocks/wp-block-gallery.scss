@@ -84,6 +84,35 @@
 		}
 	}
 }
+.tns-outer:has(.is-style-slider-gallery) {	
+	.counter {
+		width: 100%;
+		max-width: calc(var(--wp--style--global--content-size) + (2 * var(--wp--style--root--padding-left)));
+		left: 50%;
+		transform: translate(-50%, 0);
+		text-align: right;
+		padding-right: var(--wp--style--root--padding-right);
+		padding-left: var(--wp--style--root--padding-left);
+		// top: 12px;
+		// right: 20px;
+		// bottom: auto;
+		// background: rgba(255, 255, 255, 0.4);
+		// padding: 2px 10px;
+		// border-radius: 20px;
+		// text-align: center;
+		// @media (min-width: 782px) { 
+		// 	top: 22px;
+		// 	right: 26px;
+		// 	padding: 2px 12px;
+		// 	min-width: 58px;
+		// }
+	}
+	@media (min-width: 782px) { 
+		// .tns-nav {
+		// 	display: none;
+		// }
+	}	
+}
 .tns-outer:has(.is-style-slider-gallery-lg) {	
 	.counter {
 		top: 12px;

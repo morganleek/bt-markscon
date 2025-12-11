@@ -104,6 +104,18 @@
 		}
 	}
 	&:is(footer) {
+		a {
+			// text-decoration: none;
+			// text-decoration-color: red;
+			text-decoration: underline rgba(#212427, 0);
+			transition: all 0.3s;
+			@media (hover: hover) {
+				&:hover {
+					// color: var(--wp--preset--color--custom-red);
+					text-decoration: underline rgba(#212427, 1);
+				}
+			}
+		}
 		p {
 			line-height: 1.2em;
 			@media (width < 782px ) {
