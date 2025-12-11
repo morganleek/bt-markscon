@@ -43,19 +43,51 @@ document.addEventListener('DOMContentLoaded', () => {
 			gutter: 12,
 			controls: false,
 			navPosition: "bottom",
-			autoplayButton: false
+			autoplayButton: false,
+			// mouseDrag: true
 		} );
 
 		let info = slider.getInfo();
 		const counter = document.createElement( "div" );
 		counter.classList.add( "counter" );
-		counter.innerHTML = `${info.index + 1} / ${info.slideCount}`;
+		counter.innerHTML = `${info.displayIndex} / ${info.slideCount}`;
 
 		const ref = gallery.parentElement.appendChild( counter );
 
 		slider.events.on( 'transitionEnd', () => {
 			info = slider.getInfo();
-			ref.innerHTML = `${info.index + 1} / ${info.slideCount}`;
+			ref.innerHTML = `${info.displayIndex} / ${info.slideCount}`;
+		} );
+	} );
+
+	document.querySelectorAll( ".wp-block-gallery.is-style-slider-gallery-lg" ).forEach( gallery => {
+		const slider = tns( {
+			container: gallery,
+			items: 1,
+			mode: 'carousel',
+			// autoWidth: true,
+			loop: true,
+			autoplay: true,
+			gutter: 0,
+			controls: false,
+			nav: false,
+			navPosition: "bottom",
+			speed: 500
+			// autoplayButton: true,
+			// mouseDrag: true
+		} );
+
+		let info = slider.getInfo();
+		const counter = document.createElement( "div" );
+		counter.classList.add( "counter" );
+		counter.innerHTML = `${info.displayIndex} / ${info.slideCount}`;
+
+		const ref = gallery.parentElement.appendChild( counter );
+
+		slider.events.on( 'transitionEnd', () => {
+			info = slider.getInfo();
+			console.log( info );
+			ref.innerHTML = `${info.displayIndex} / ${info.slideCount}`;
 		} );
 	} );
 

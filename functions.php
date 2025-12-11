@@ -138,7 +138,12 @@
 
 		register_block_style( 'core/gallery', [
 			'name' => 'slider-gallery',
-			'label' => 'Slider'
+			'label' => 'Slider Sm'
+		] );
+
+		register_block_style( 'core/gallery', [
+			'name' => 'slider-gallery-lg',
+			'label' => 'Slider Lg'
 		] );
 
 		register_block_style( 'core/button', [
