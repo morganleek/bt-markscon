@@ -3,6 +3,10 @@ import './style.scss';
 
 // Slider - Library import example
 import { tns } from "tiny-slider"
+import { gsap } from "gsap";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
 	// Prevent nav animations running when page first loaded
@@ -118,5 +122,41 @@ document.addEventListener('DOMContentLoaded', () => {
 		button.addEventListener( "click", e => {
 			button.remove();
 		} );
+	} );
+
+	// Centre line
+	const initRedLine = () => {
+		ScrollTrigger.getAll().forEach( st => st.kill() );
+		const top = document.querySelector( ".center-line" ).offsetTop ?? '140';
+
+		document.querySelectorAll( "#red-line" ).forEach( svg => {
+			const water = svg.querySelector( ".red-lines-line" );
+			gsap.set(water, {visibility:"visible"});
+			gsap.to(water, {drawSVG:"0%", duration: 0, ease:"power2.in"});
+
+			const tl = gsap.timeline({
+				scrollTrigger: {
+					scrub: 1,
+					trigger: svg,
+					start: `top ${top}px`,
+					// markers: true,
+					endTrigger: svg,
+					end: 'bottom bottom',
+				},
+			});
+
+			tl.to(water, {
+				drawSVG:"100%",
+				ease: "linear"
+			});
+		} );
+	};
+
+	initRedLine();
+
+	let resizeTimer;
+	window.addEventListener( 'resize', () => {
+		clearTimeout( resizeTimer );
+		resizeTimer = setTimeout( initRedLine, 250 );
 	} );
 });

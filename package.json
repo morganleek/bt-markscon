@@ -11,6 +11,7 @@
     "vite-plugin-browser-sync": "4.0.0"
   },
   "dependencies": {
+    "gsap": "^3.14.2",
     "tiny-slider": "^2.9.4"
   },
   "scripts": {

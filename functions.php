@@ -69,6 +69,17 @@
 		// 	$block_content = preg_replace( $svg_regex, $svg, $block_content );
 		// }
 
+		if( $block['blockName'] === "core/group" && isset( $block['attrs']['className'] ) && stripos( $block['attrs']['className'], "center-line" ) !== false ) {
+			$div_regex = '/.*\K<\/div>/s';
+			$svg = "<svg id='red-line' xmlns='http://www.w3.org/2000/svg'><line class='red-lines-line' x1='5' x2='5' y2='100%' style='fill:none; stroke:red; stroke-miterlimit:10; stroke-width:10px;'/></svg>";
+			// $svg = "<div id='red-line'></div>";
+			$block_content = preg_replace(
+				$div_regex,
+				$svg . "</div>",
+				$block_content
+			);
+		}
+
 		return $block_content;
 	}
 
