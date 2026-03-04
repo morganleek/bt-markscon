@@ -208,7 +208,14 @@ function bones_theme_live_query_formatted( $html, $post_id ) {
 
 	return $post_thumbnail . "<div class=\"post-content\">" . 
 		"<h6 class=\"taxonomy-terms terms-project-category\">$terms_html</h6>" .
-		"<div class=\"post-excerpt\">" . get_the_excerpt( $post_id ) . "</div>" . 
+		"<div class=\"post-excerpt\">" .
+			"<p>" . get_the_excerpt( $post_id ) . "</p>" . 
+			"<div class='wp-block-buttons'>
+				<div class='wp-block-button is-style-outline has-icon__arrow-right'>
+					<a class='wp-block-button__link has-white-color has-text-color has-link-color wp-element-button' style='border: 1px solid;' href='" . get_permalink( $post_id ) . "'>View project<span class='wp-block-button__link-icon' aria-hidden='true'><svg width='16' height='11' viewBox='0 0 16 11' xmlns='http://www.w3.org/2000/svg'><polygon points='0 4.7 13.1180124 4.7 9.44099379 1 10.4347826 0 16 5.5 10.4347826 11 9.44099379 10 13.1180124 6.3 0 6.3'></polygon></svg></span></a>
+				</div>
+			</div>" .
+		"</div>" . 
 		"<h4 class=\"post-title\">" . 
 			"<a href=\"" . get_permalink( $post_id ) . "\">" . get_the_title($post_id) . "</a>" . 
 		"</h4>" . 
