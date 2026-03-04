@@ -152,7 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		} );
 	};
 
-	initRedLine();
+	if( document.querySelector( ".center-line" ) ) {
+		initRedLine();
+	}
 
 	let resizeTimer;
 	window.addEventListener( 'resize', () => {
