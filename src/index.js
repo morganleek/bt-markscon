@@ -38,12 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		const slider = tns( {
 			container: gallery,
 			autoWidth: true,
-			loop: false,
+			loop: true,
 			autoplay: true,
 			gutter: 12,
 			controls: false,
 			navPosition: "bottom",
+			autoplay: true,
 			autoplayButton: false,
+			autoplayTimeout: 4000,
+			speed: 500,
 			// mouseDrag: true
 		} );
 

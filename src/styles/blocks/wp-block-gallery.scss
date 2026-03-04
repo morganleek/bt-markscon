@@ -147,8 +147,11 @@
 		flex: 1 1;
 		border: 0 none;
 		background: var(--wp--preset--color--custom-red);
-		height: 1px;
+		height: 3px;
 		padding: 0;
+		&:focus-visible {
+			outline: 0 none;
+		}
 		&.tns-nav-active {
 			& ~ * {
 				background: #d2d2d2;
