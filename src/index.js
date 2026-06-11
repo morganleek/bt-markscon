@@ -7,6 +7,7 @@ import { gsap } from "gsap";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
+ScrollTrigger.normalizeScroll(true);
 
 document.addEventListener('DOMContentLoaded', () => {
 	// Prevent nav animations running when page first loaded
@@ -93,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		slider.events.on( 'transitionEnd', () => {
 			info = slider.getInfo();
-			console.log( info );
+			// console.log( info );
 			ref.innerHTML = `${info.displayIndex} / ${info.slideCount}`;
 		} );
 	} );
@@ -124,10 +125,27 @@ document.addEventListener('DOMContentLoaded', () => {
 		} );
 	} );
 
+	// console.log( document.body.offsetHeight );
+	document.querySelectorAll( "main > .entry-content > .wp-block-group > *, main > .entry-content > .wp-block-columns > .wp-block-column > *, main > .entry-content > .wp-block-media-text, .home-cover > .wp-block-cover > .wp-block-cover__inner-container > .wp-block-group > *" ).forEach( block => {
+		// console.log( block.offsetTop );
+		gsap.timeline({
+			scrollTrigger: {
+				scrub: 1,
+				trigger: block,
+				start: `top bottom`,
+				once: true,
+				// onEnter: ( { progress, direction, isActive } ) => block.classList.add( "is-visible" ),
+				toggleClass: "is-visible",
+				// markers: true
+			},
+		});
+	} );
+
 	// Centre line
 	const initRedLine = () => {
 		ScrollTrigger.getAll().forEach( st => st.kill() );
-		const top = document.querySelector( ".center-line" ).offsetTop ?? '140';
+		// console.log( document.querySelector( ".center-line" ), document.querySelector( ".center-line" ).offsetTop );
+		const top = document.querySelector( ".center-line" ) ? document.querySelector( ".center-line" ).offsetTop : '140';
 
 		document.querySelectorAll( "#red-line" ).forEach( svg => {
 			const water = svg.querySelector( ".red-lines-line" );
@@ -160,18 +178,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener( 'resize', () => {
 		clearTimeout( resizeTimer );
 		resizeTimer = setTimeout( initRedLine, 250 );
-	} );
-
-	document.querySelectorAll( "main > .entry-content > .wp-block-group > *, main > .entry-content > .wp-block-columns > .wp-block-column > *, main > .entry-content > .wp-block-media-text, .home-cover > .wp-block-cover > .wp-block-cover__inner-container > .wp-block-group > *" ).forEach( block => {
-		gsap.timeline({
-			scrollTrigger: {
-				scrub: 1,
-				trigger: block,
-				start: `top bottom`,
-				once: true,
-				onEnter: ( { progress, direction, isActive } ) => block.classList.add( "is-visible" ),
-				// markers: true
-			},
-		});
 	} );
 });
