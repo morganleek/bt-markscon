@@ -1,15 +1,15 @@
 {
   "src/index.js": {
-    "file": "assets/main-BUXUtaun.js",
+    "file": "assets/main-CZoP2BL_.js",
     "name": "main",
     "src": "src/index.js",
     "isEntry": true,
     "css": [
-      "assets/style_only-CDuTUi3U.css"
+      "assets/style_only-D_u15Vyp.css"
     ]
   },
   "src/style.scss": {
-    "file": "assets/style_only-CDuTUi3U.css",
+    "file": "assets/style_only-D_u15Vyp.css",
     "src": "src/style.scss",
     "isEntry": true
   }
