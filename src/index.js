@@ -161,4 +161,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		clearTimeout( resizeTimer );
 		resizeTimer = setTimeout( initRedLine, 250 );
 	} );
+
+	document.querySelectorAll( "main > .entry-content > .wp-block-group > *, main > .entry-content > .wp-block-columns > .wp-block-column > *, main > .entry-content > .wp-block-media-text" ).forEach( block => {
+		gsap.timeline({
+			scrollTrigger: {
+				scrub: 1,
+				trigger: block,
+				start: `top bottom`,
+				once: true,
+				onEnter: ( { progress, direction, isActive } ) => block.classList.add( "is-visible" ),
+				// markers: true
+			},
+		});
+	} );
 });

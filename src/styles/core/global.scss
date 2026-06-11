@@ -51,3 +51,54 @@ input[type="submit"],
 button {
 	@include mixins.button;
 }
+
+
+// Animation loading
+// 
+main {
+	& > .entry-content {
+		& > .wp-block-media-text {
+			transition: opacity 0.8s, transform 0.8s;
+			&:not(.is-visible) {
+				opacity: 0;
+				transform: translate3d(0,100px,0);
+			}
+		}
+		& > .wp-block-group {
+			& > * {
+				// &:not(:has(> .wp-block-scm-live-query)) {
+					transition: opacity 0.8s, transform 0.8s;
+					&:not(.is-visible) {
+						opacity: 0;
+						transform: translate3d(0,100px,0);
+					}
+				// }
+			}
+		}
+		& > .wp-block-columns {
+			& > .wp-block-column {
+				& > * {
+					transition: opacity 0.8s, transform 0.8s;
+					&:not(.is-visible) {
+						opacity: 0;
+						transform: translate3d(0,100px,0);
+					}
+				}
+				&:not(:nth-child(1)) {
+					& > * {
+						transition-delay: 0.2s;
+					}
+				}
+			}
+		}
+	}
+	// .wp-block-scm-live-posts {
+	// 	.post-card {
+	// 		transition: opacity 0.8s, transform 0.8s;
+	// 		&:not(.is-visible) {
+	// 			opacity: 0.5;
+	// 			transform: translate3d(0,100px,0);
+	// 		}
+	// 	}
+	// }
+}
