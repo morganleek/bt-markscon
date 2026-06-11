@@ -134,6 +134,7 @@
 			}
 		}
 	}
+	// 
 	&.home-cover {
 		& > .wp-block-cover {
 			@media (width < 782px) { 
@@ -155,6 +156,16 @@
 						}
 						.wp-block-buttons {
 							justify-content: center;
+						}
+					}
+					& > * {
+
+						&:last-child:not(.block-editor-block-list__block) {
+							transition: opacity 0.8s, transform 0.8s;
+							&:not(.is-visible) {
+								opacity: 0;
+								transform: translate3d(0,100px,0);
+							}
 						}
 					}
 				}
