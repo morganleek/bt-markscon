@@ -7,7 +7,8 @@ import { gsap } from "gsap";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
-ScrollTrigger.normalizeScroll(true);
+// ScrollTrigger.normalizeScroll(true);
+// let mm = gsap.matchMedia();
 
 document.addEventListener('DOMContentLoaded', () => {
 	// Prevent nav animations running when page first loaded
@@ -125,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		} );
 	} );
 
-	// console.log( document.body.offsetHeight );
+	// Fade In
 	document.querySelectorAll( "main > .entry-content > .wp-block-group > *, main > .entry-content > .wp-block-columns > .wp-block-column > *, main > .entry-content > .wp-block-media-text, .home-cover > .wp-block-cover > .wp-block-cover__inner-container > .wp-block-group > *" ).forEach( block => {
 		// console.log( block.offsetTop );
 		gsap.timeline({
