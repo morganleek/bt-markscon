@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	} );
 
 	// console.log( document.body.offsetHeight );
-	document.querySelectorAll( "main > .entry-content > .wp-block-group:not(.center-line) > *, main > .entry-content > .wp-block-columns > .wp-block-column > *, main > .entry-content > .wp-block-media-text, .home-cover > .wp-block-cover > .wp-block-cover__inner-container > .wp-block-group > *" ).forEach( block => {
+	document.querySelectorAll( "main > .entry-content > .wp-block-group > *, main > .entry-content > .wp-block-columns > .wp-block-column > *, main > .entry-content > .wp-block-media-text, .home-cover > .wp-block-cover > .wp-block-cover__inner-container > .wp-block-group > *" ).forEach( block => {
 		// console.log( block.offsetTop );
 		gsap.timeline({
 			scrollTrigger: {
@@ -143,7 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Centre line
 	const initRedLine = () => {
-		ScrollTrigger.getAll().forEach( st => st.kill() );
+		// What is this for?
+		// ScrollTrigger.getAll().forEach( st => st.kill() );
 		// console.log( document.querySelector( ".center-line" ), document.querySelector( ".center-line" ).offsetTop );
 		const top = document.querySelector( ".center-line" ) ? document.querySelector( ".center-line" ).offsetTop : '140';
 
