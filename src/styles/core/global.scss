@@ -64,15 +64,15 @@ main {
 				transform: translate3d(0,100px,0);
 			}
 		}
-		& > .wp-block-group {
+		& > .wp-block-group:not(.center-line) {
 			& > * {
-				// &:not(:has(> .wp-block-scm-live-query)) {
+				&:not(svg) {
 					transition: opacity 0.8s, transform 0.8s;
 					&:not(.is-visible) {
 						opacity: 0;
 						transform: translate3d(0,100px,0);
 					}
-				// }
+				}
 			}
 		}
 		& > .wp-block-columns {
