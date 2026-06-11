@@ -1,15 +1,15 @@
 {
   "src/index.js": {
-    "file": "assets/main-efThdS1O.js",
+    "file": "assets/main-CtwQAWyM.js",
     "name": "main",
     "src": "src/index.js",
     "isEntry": true,
     "css": [
-      "assets/style_only-Dx7Fiije.css"
+      "assets/style_only-Bnulp2iU.css"
     ]
   },
   "src/style.scss": {
-    "file": "assets/style_only-Dx7Fiije.css",
+    "file": "assets/style_only-Bnulp2iU.css",
     "src": "src/style.scss",
     "isEntry": true
   }
